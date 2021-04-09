@@ -20,6 +20,13 @@ for f in $TIZEN_STUDIO/tools/arm-linux-gnueabi-gcc-9.2/bin/arm-linux-*; do
   cp $f armv7l-tizen-${b:4:99}
 done
 
+# For arm64
+cp $TIZEN_STUDIO/tools/aarch64-linux-gnu-gcc-9.2/bin/aarch64-tizen-linux-gnu-gcc-9.2.0 .
+for f in $TIZEN_STUDIO/tools/aarch64-linux-gnu-gcc-9.2/bin/aarch64-linux-*; do
+  b=`basename $f`
+  cp $f aarch64-tizen-${b:8:99}
+done
+
 # For x86
 cp $TIZEN_STUDIO/tools/i586-linux-gnueabi-gcc-9.2/bin/i586-tizen-linux-gnueabi-gcc-9.2.0 .
 for f in $TIZEN_STUDIO/tools/i586-linux-gnueabi-gcc-9.2/bin/i586-linux-*; do
@@ -37,8 +44,9 @@ cp -r $TIZEN_STUDIO/tools/i586-linux-gnueabi-gcc-9.2/lib/gcc/i586-tizen-linux-gn
 Run `build-rootfs.py` to generate sysroots for arm (device) and x86 (emulator).
 
 ```sh
-# For Tizen 5.5
+# For Tizen 5.5+
 sysroot/build-rootfs.py --arch arm
+sysroot/build-rootfs.py --arch arm64
 sysroot/build-rootfs.py --arch x86
 
 # For Tizen 4.0 (optional)
@@ -48,7 +56,7 @@ sysroot/build-rootfs.py --arch arm \
 --output arm_40
 sysroot/build-rootfs.py --arch x86 \
 --base-repo http://download.tizen.org/snapshots/tizen/4.0-base/latest/repos/emulator32/packages \
---unified-repo http://download.tizen.org/snapshots/tizen/4.0-unified/latest/repos/standard/packages
+--unified-repo http://download.tizen.org/snapshots/tizen/4.0-unified/latest/repos/standard/packages \
 --output x86_40
 ```
 
