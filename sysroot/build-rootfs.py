@@ -178,6 +178,9 @@ for rpm in [f for f in os.listdir(downloadPath) if f.endswith('.rpm')]:
 subprocess.run(f'ln -s asm-{args.arch} {outpath}/usr/include/asm', shell=True)
 subprocess.run(f'ln -s libecore_input.so.1 {outpath}/usr/lib/libecore_input.so',
                shell=True)
+if args.arch == 'arm64':
+    subprocess.run(f'ln -s ../lib64/pkgconfig {outpath}/usr/lib/pkgconfig',
+                   shell=True)
 
 # Apply a patch if applicable.
 patchFile = os.path.abspath(f'{__file__}/../{args.arch}.patch')
