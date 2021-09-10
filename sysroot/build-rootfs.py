@@ -29,6 +29,8 @@ unifiedPackages = [
     'capi-appfw-app-common-devel',
     'capi-appfw-app-control',
     'capi-appfw-app-control-devel',
+    'capi-appfw-app-manager',
+    'capi-appfw-app-manager-devel',
     'capi-base-common',
     'capi-base-common-devel',
     'capi-base-utils',
