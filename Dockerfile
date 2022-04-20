@@ -46,9 +46,8 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install packages for engine build.
 RUN apt-get update && \
-    apt-get install -y git curl ca-certificates python && \
+    apt-get install -y binutils-arm-linux-gnueabi binutils-aarch64-linux-gnu binutils-i686-linux-gnu && \
     apt-get clean
 
 # Copy build results from previous stages.
