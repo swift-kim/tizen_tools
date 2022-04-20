@@ -108,7 +108,7 @@ unifiedPackages = [
     'xdgmime',
     'xdgmime-devel',
     'wayland-extension-client-devel',
-    'wayland-devel'
+    'wayland-devel',
 ]
 
 # Execute only if run as a script.
