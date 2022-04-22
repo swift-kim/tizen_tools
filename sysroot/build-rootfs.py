@@ -118,7 +118,7 @@ if __name__ != "__main__":
 # Check dependencies.
 for dep in ['rpm2cpio', 'cpio', 'git']:
     if not shutil.which(dep):
-        sys.exit(f'{dep} is not install. To install, run:\n'
+        sys.exit(f'{dep} is not installed. To install, run:\n'
                  f'  sudo apt install {dep}')
 
 # Parse arguments.
@@ -207,7 +207,7 @@ if not os.path.exists(f'{outpath}/usr/include/asm'):
 if args.arch == 'arm64' and not os.path.exists(f'{outpath}/usr/lib/pkgconfig'):
     os.symlink(f'../lib64/pkgconfig', f'{outpath}/usr/lib/pkgconfig')
 
-# Copy objects required by linker, such as crtbeginS.o and libgcc.a.
+# Copy objects required by the linker, such as crtbeginS.o and libgcc.a.
 if args.arch == 'arm64':
     libpath = f'{outpath}/usr/lib64'
 else:

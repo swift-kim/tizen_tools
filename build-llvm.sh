@@ -28,7 +28,6 @@ cmake -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX="$OUTPUT_DIR" \
   ../llvm
-ninja
 ninja install
 
 # Create symbolic links to binutils.
