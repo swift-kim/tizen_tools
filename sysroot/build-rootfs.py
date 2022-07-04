@@ -24,8 +24,14 @@ basePackages = [
     'zlib-devel',
 ]
 unifiedPackages = [
+    'app-core-common-devel',
+    'app-core-efl',
+    'app-core-efl-devel',
+    'app-core-ui-devel',
     'atk-devel',
     'at-spi2-atk-devel',
+    'aul-devel',
+    'bundle-devel',
     'capi-appfw-application',
     'capi-appfw-application-devel',
     'capi-appfw-app-common',
