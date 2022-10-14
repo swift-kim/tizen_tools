@@ -149,15 +149,15 @@ parser.add_argument(
     '-o', '--output', metavar='STR', type=str,
     help='name of the output directory (defaults to arch)')
 parser.add_argument(
-    '-c', '--clean', action='store_true',
-    help='clean up the output directory before proceeding')
+    '-f', '--force', action='store_true',
+    help='force re-downloading of packages')
 args = parser.parse_args()
 
 if not args.output:
     args.output = args.arch
 outpath = os.path.abspath(f'{__file__}/../{args.output}')
 
-if args.clean and os.path.exists(outpath):
+if args.force and os.path.exists(outpath):
     shutil.rmtree(outpath)
 
 downloadPath = os.path.join(outpath, '.rpms')
