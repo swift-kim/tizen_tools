@@ -228,7 +228,7 @@ subprocess.run(
 # Apply a patch if applicable.
 patchFile = os.path.abspath(f'{__file__}/../{args.arch}.patch')
 if os.path.exists(patchFile):
-    command = f'git apply --directory sysroot/{args.output} {patchFile}'
+    command = f'git apply --unsafe-paths --directory {outpath} {patchFile}'
     subprocess.run(command, shell=True, check=True)
 
 print('Complete')
