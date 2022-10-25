@@ -48,7 +48,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y binutils-arm-linux-gnueabi binutils-aarch64-linux-gnu binutils-i686-linux-gnu && \
-    apt-get install -y git curl pkg-config ca-certificates xz-utils python python3 python3-lib2to3 libncurses5 && \
+    apt-get install -y git curl pkg-config ca-certificates xz-utils python python3 python3-lib2to3 python3-pip libncurses5 && \
     apt-get clean
 
 # Copy build results from previous stages.
